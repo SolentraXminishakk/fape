@@ -49,8 +49,10 @@ function ScreenGUIName(length) -- 29 length is ideal
     return str
 end
 
+getgenv().screenGuiName = ScreenGUIName(29)
+
 ---=== Main Part ===----
-local ScreenGUI = library:Create('ScreenGui', {Name = ScreenGUIName(29); Parent = game.CoreGui})
+local ScreenGUI = library:Create('ScreenGui', {Name = getgenv().screenGuiName; Parent = game.CoreGui})
 
 function library:CreateWindow(Name)
 	self.Toggled = true
